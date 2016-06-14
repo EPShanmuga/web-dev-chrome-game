@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+BLOCKS
+</title>
+</head>
+
+<style>
+.format
+{
+color:red;
+font-size:50px;
+background-color:black;
+font-family:forte;
+border:5px solid red;
+padding:100px 100px;
+}
+</style>
+
+<body style="background-color:black;">
+<center>
+<h1 style="background-color:black;border: 3px solid white;color:red;font-size:40px;padding: 20px 35px;"> BLOCKS</h1>
+<br>
+<br>
+<canvas id="myCanvas" width="600" height="150" style="background-color:white;border:5px solid red;">
+</canvas>
+<br>
+<br>
+<br>
+<button onclick="jump()" id="bjump" style="border:3px solid white;font-size:30px;padding:15px 30px;background-color:red;">JUMP</button>
+</center>
+<script>
+var pflag=1;
+var black=[20,40,5,40];
+var red=[400,60,60,20];
+var finish=1;
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var y=600,count=0,flag=0;
+ctx.fillStyle="#000000";
+ctx.fillRect(20,40,5,40);
+function move(x)
+{
+
+ctx.fillStyle="#FF0000";
+ctx.fillRect(x,60,2,20);
+red[0]=x;
+if(finish)
+if(red[0]>-1&&red[0]<26)
+if(black[1]>20)
+{
+document.write("GAME OVER!!!");
+finish=0;}
+
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(x+20,60,2,20);
+x-=2;
+if(x>=-20)
+{count++;
+setTimeout(function(){move(x);},50);
+}
+}
+move(y);
+var diff=0;
+for(var num=0;num<50;num++)
+{
+diff+=Math.floor((Math.random() * 4500) + 1500);
+setTimeout(function(){move(y);},diff);
+}
+if(num==50)
+
+document.write("FINISHED SUCCESSFULLY!!!");
+function jump()
+{
+
+document.getElementById("bjump").disabled = true;
+ctx.fillStyle="#000000";
+ctx.fillRect(20,30,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,70,5,10);
+black[1]=30;
+
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,25,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,65,5,15);
+black[1]=25;
+},100);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,20,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,60,5,20);
+black[1]=20;
+},200);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,15,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,55,5,25);
+black[1]=15;
+},300);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,10,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,50,5,30);
+black[1]=10;
+},400);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,15,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,10,5,10);
+black[1]=15;
+},1200);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,20,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,10,5,10);
+black[1]=20;
+},1200);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,25,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,10,5,15);
+black[1]=25;
+},1300);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,30,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,10,5,20);
+black[1]=30;
+},1400);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,35,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,10,5,25);
+black[1]=35;
+},1500);
+
+setTimeout(function (){
+ctx.fillStyle="#000000";
+ctx.fillRect(20,40,5,40);
+ctx.fillStyle="#FFFFFF";
+ctx.fillRect(20,10,5,30);
+black[1]=40;document.getElementById("bjump").disabled = false;
+},1600);
+}
+</script>
+</body>
+</html>
